@@ -35,7 +35,7 @@ export const Hero = () => {
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-none uppercase italic tracking-tighter mb-8">
-            The Foundation <br />
+            The Foundation <br className="hidden lg:block" />
             of <span className="text-amber-500">Progress.</span>
           </h1>
 

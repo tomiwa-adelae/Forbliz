@@ -32,11 +32,11 @@ export const Hero = () => {
 
           {/* Headline */}
           <h1 className="text-5xl md:text-8xl font-black text-white leading-[0.9] uppercase italic tracking-tighter mb-8">
-            Engineering <br />
+            Engineering <br className="hidden lg:block" />
             <span className="text-amber-500">Landmarks.</span>
           </h1>
 
-          <p className="text-xl text-gray-400 font-medium leading-relaxed max-w-xl mb-12 border-l-2 border-white/20 pl-6">
+          <p className="text-xl text-gray-400 font-medium leading-relaxed max-w-xl mb-12 border-l-2 border-white/20 pl-3 md:pl-6">
             From the heart of the Delta quarries to the urban arteries of Lagos,
             our projects are the physical evidence of our commitment to
             Nigeria's industrial future.

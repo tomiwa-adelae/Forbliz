@@ -41,7 +41,7 @@ export function MobileNavbar() {
             variant="ghost"
             disabled
           >
-            <Icon size={20} />
+            {/* <Icon size={20} /> */}
             {label}
             <Badge variant="secondary" className="ml-auto">
               Soon
@@ -56,7 +56,7 @@ export function MobileNavbar() {
             onClick={handleLinkClick}
           >
             <Link href={slug}>
-              <Icon size={20} />
+              {/* <Icon size={20} /> */}
               {label}
             </Link>
           </Button>

@@ -19,8 +19,8 @@ const pillars = [
 
 export const MissionSection = () => {
   return (
-    <section className="py-24 bg-white relative">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-white relative">
+      <div className="container">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           {/* Left: Detailed Narrative */}
           <div className="w-full lg:w-1/2 space-y-8">
@@ -28,8 +28,8 @@ export const MissionSection = () => {
               <h2 className="text-amber-600 font-black uppercase tracking-[0.4em] text-sm">
                 Strategic Intent
               </h2>
-              <h3 className="text-4xl md:text-5xl font-black text-slate-900 uppercase italic leading-tight">
-                Driving Excellence <br />
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 uppercase italic leading-tight">
+                Driving Excellence <br className="hidden lg:block" />
                 <span className="text-slate-400">Beyond the Surface.</span>
               </h3>
             </div>

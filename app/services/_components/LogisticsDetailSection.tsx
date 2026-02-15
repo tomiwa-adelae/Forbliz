@@ -19,12 +19,12 @@ const logisticsFeatures = [
 
 export const LogisticsDetailSection = () => {
   return (
-    <section id="logistics" className="py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+    <section id="logistics" className="py-16 md:py-24 bg-white overflow-hidden">
+      <div className="container">
+        <div className="flex flex-col lg:flex-row items-center gap-x-6 gap-y-10">
           {/* Left: High-Impact Image */}
           <div className="w-full lg:w-1/2 relative group">
-            <div className="relative h-[600px] w-full rounded-[2rem] overflow-hidden shadow-2xl bg-slate-100">
+            <div className="relative h-[500px] w-full rounded-[2rem] overflow-hidden shadow-2xl bg-slate-100">
               <Image
                 src="/assets/images/logistics-fleet.jpg"
                 alt="Forbliz Logistics Fleet"
@@ -51,7 +51,7 @@ export const LogisticsDetailSection = () => {
           </div>
 
           {/* Right: Technical Narrative */}
-          <div className="w-full lg:w-1/2 space-y-8">
+          <div className="w-full lg:w-1/2 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 rounded-full">
               <IconTruckDelivery size={16} className="text-amber-600" />
               <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">
@@ -59,24 +59,26 @@ export const LogisticsDetailSection = () => {
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 uppercase italic leading-tight">
-              Logistics & <br />
-              <span className="text-amber-500">Fleet Management.</span>
-            </h2>
+            <div className="space-y-2">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 uppercase italic leading-tight">
+                Logistics & <br className="hidden lg:block" />
+                <span className="text-amber-500">Fleet Management.</span>
+              </h2>
 
-            <p className="text-slate-600 text-lg leading-relaxed">
-              Downtime is the enemy of progress. We provide comprehensive
-              logistics solutions that ensure your heavy machinery is where it
-              needs to be, maintained by experts, and fueled by AIRMOB’s premium
-              energy network.
-            </p>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                Downtime is the enemy of progress. We provide comprehensive
+                logistics solutions that ensure your heavy machinery is where it
+                needs to be, maintained by experts, and fueled by AIRMOB’s
+                premium energy network.
+              </p>
+            </div>
 
             {/* Specialized List */}
-            <div className="space-y-3">
+            <div className="space-y-1.5">
               {logisticsFeatures.map((feature, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-4 p-4 hover:bg-slate-50 rounded-2xl transition-colors group"
+                  className="flex items-start gap-2.5 p-4 hover:bg-slate-50 rounded-2xl transition-colors group"
                 >
                   <IconCheck size={20} className="text-amber-500 mt-1" />
                   <div>
@@ -91,7 +93,7 @@ export const LogisticsDetailSection = () => {
               ))}
             </div>
 
-            <div className="pt-8 border-t border-slate-100 flex gap-8">
+            <div className="pt-4 border-t border-slate-100 flex gap-8">
               <div className="flex items-center gap-3">
                 <IconManualGearbox size={20} className="text-slate-400" />
                 <span className="text-[10px] font-black uppercase text-slate-500 tracking-tighter">

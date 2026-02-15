@@ -29,16 +29,16 @@ const leaders = [
 
 export const LeadershipSection = () => {
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="container">
         {/* Header Area */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-amber-600 font-black uppercase tracking-[0.4em] text-sm mb-4">
               Our Leadership
             </h2>
-            <h3 className="text-4xl md:text-6xl font-black text-slate-900 leading-none uppercase italic">
-              The Minds Behind <br />
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-none uppercase italic">
+              The Minds Behind <br className="hidden lg:block" />
               <span className="text-slate-400">The Machinery.</span>
             </h3>
           </div>

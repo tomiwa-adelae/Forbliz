@@ -20,19 +20,19 @@ const logisticsStats = [
 
 export const FleetLogistics = () => {
   return (
-    <section className="py-24 bg-[#040d0a] text-white overflow-hidden relative">
+    <section className="py-16 md:py-24 bg-[#040d0a] text-white overflow-hidden relative">
       {/* Decorative Texture */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
+      <div className="container relative z-10">
+        <div className="flex flex-col lg:flex-row gap-10 items-center">
           {/* Left Side: The Narrative */}
-          <div className="w-full lg:w-1/2 space-y-8">
+          <div className="w-full lg:w-1/2 space-y-6">
             <h2 className="text-amber-500 font-black uppercase tracking-[0.4em] text-sm">
               Global Mobilization
             </h2>
-            <h3 className="text-4xl md:text-5xl font-black uppercase italic leading-tight">
-              From Yard to Site. <br />
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase italic leading-tight">
+              From Yard to Site.{" "}
               <span className="text-gray-500">
                 No Territory is Out of Reach.
               </span>
@@ -44,7 +44,7 @@ export const FleetLogistics = () => {
               AIRMOB tankers that fuel them on arrival.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
               <div className="flex gap-4">
                 <div className="shrink-0 w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-500">
                   <IconMapPins size={24} />
@@ -99,7 +99,7 @@ export const FleetLogistics = () => {
                         {stat.sub}
                       </p>
                     </div>
-                    <div className="text-4xl font-black italic">
+                    <div className="text-3xl md:text-4xl font-black italic">
                       {stat.value}
                     </div>
                   </div>

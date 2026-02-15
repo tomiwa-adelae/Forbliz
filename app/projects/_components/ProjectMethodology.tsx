@@ -33,7 +33,7 @@ const steps = [
 
 export const ProjectMethodology = () => {
   return (
-    <section className="py-24 bg-slate-950 text-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-slate-950 text-white relative overflow-hidden">
       {/* Background Grid Pattern */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -43,13 +43,13 @@ export const ProjectMethodology = () => {
         }}
       />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-amber-500 font-black uppercase tracking-[0.4em] text-sm mb-4">
             The Forbliz Standard
           </h2>
-          <h3 className="text-4xl md:text-6xl font-black uppercase italic leading-none">
-            Project <br />
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase italic leading-none">
+            Project <br className="hidden lg:block" />
             <span
               className="text-transparent"
               style={{ WebkitTextStroke: "1px white" }}
@@ -59,7 +59,7 @@ export const ProjectMethodology = () => {
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-x-8 gap-y-12 relative">
           {/* Connector Line (Desktop Only) */}
           <div className="hidden lg:block absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent -z-10" />
 
@@ -73,7 +73,7 @@ export const ProjectMethodology = () => {
                 </div>
               </div>
 
-              <h4 className="text-xl font-black uppercase italic mb-4 group-hover:text-amber-500 transition-colors">
+              <h4 className="text-xl font-black uppercase italic mb-2 group-hover:text-amber-500 transition-colors">
                 {step.title}
               </h4>
               <p className="text-gray-400 text-sm leading-relaxed font-medium">

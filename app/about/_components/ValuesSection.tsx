@@ -29,7 +29,7 @@ const values = [
 
 export const ValuesSection = () => {
   return (
-    <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-slate-900 text-white relative overflow-hidden">
       {/* Decorative background pattern */}
       <div
         className="absolute inset-0 opacity-5 pointer-events-none"
@@ -39,13 +39,13 @@ export const ValuesSection = () => {
         }}
       />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-amber-500 font-black uppercase tracking-[0.4em] text-sm mb-4">
             Our DNA
           </h2>
-          <h3 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter">
-            The Pillars of <br />
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase italic tracking-tighter">
+            The Pillars of <br className="hidden lg:block" />
             <span
               className="text-transparent"
               style={{ WebkitTextStroke: "1px white" }}

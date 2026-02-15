@@ -29,7 +29,7 @@ export const ServicesHero = () => {
             Our Capabilities
           </h2>
           <h1 className="text-5xl md:text-7xl font-black text-white uppercase italic leading-none mb-8">
-            Industrial <br />
+            Industrial <br className="hidden lg:block" />
             <span
               className="text-transparent"
               style={{ WebkitTextStroke: "1px white" }}

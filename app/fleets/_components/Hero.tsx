@@ -35,7 +35,7 @@ export const Hero = () => {
           </div>
 
           <h1 className="text-6xl md:text-8xl font-black text-white leading-[0.85] uppercase italic tracking-tighter mb-8">
-            Heavy <br />
+            Heavy <br className="hidden lg:block" />
             <span className="text-amber-500">Assets.</span>
           </h1>
 

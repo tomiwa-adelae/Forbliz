@@ -26,7 +26,7 @@ export const StickyBidBar = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 inset-x-0 z-50 px-4 animate-in slide-in-from-bottom-10 duration-500">
+    <div className="fixed hidden bottom-6 inset-x-0 z-50 px-4 animate-in slide-in-from-bottom-10 duration-500">
       <div className="container mx-auto">
         <div className="bg-slate-950 border border-white/10 shadow-2xl rounded-2xl md:rounded-full p-2 flex flex-col md:flex-row items-center justify-between gap-4 backdrop-blur-md bg-opacity-95">
           {/* Left: Context */}

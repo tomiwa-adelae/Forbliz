@@ -9,25 +9,26 @@ import {
   IconSend,
   IconBriefcase,
 } from "@tabler/icons-react";
+import { Button } from "@/components/ui/button";
 
 export const ContactSection = () => {
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="container">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-10">
           <h2 className="text-amber-600 font-black uppercase tracking-[0.4em] text-sm mb-4">
             Connect with us
           </h2>
-          <h3 className="text-4xl md:text-6xl font-black text-slate-900 leading-none uppercase italic">
-            Command <br />
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-none uppercase italic">
+            Command <br className="hidden lg:block" />
             <span className="text-slate-400">Center.</span>
           </h3>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12">
           {/* 1. Physical Presence & Details */}
-          <div className="lg:col-span-1 space-y-8">
+          <div className="lg:col-span-1 space-y-4">
             <div className="p-8 bg-slate-900 rounded-[2rem] text-white relative overflow-hidden">
               <div className="relative z-10 space-y-6">
                 <h4 className="text-xl font-black uppercase italic text-amber-500">
@@ -37,7 +38,8 @@ export const ContactSection = () => {
                 <div className="flex gap-4">
                   <IconMapPin className="text-amber-500 shrink-0" />
                   <p className="text-sm font-medium text-gray-300">
-                    12 Industrial Estate Road, <br />
+                    12 Industrial Estate Road,{" "}
+                    <br className="hidden lg:block" />
                     Ikeja, Lagos, Nigeria.
                   </p>
                 </div>
@@ -78,14 +80,11 @@ export const ContactSection = () => {
               <p className="text-sm text-slate-500 mt-2 mb-4">
                 We are always looking for certified operators and engineers.
               </p>
-              <button className="text-xs font-black uppercase tracking-widest text-amber-600 flex items-center gap-2">
-                View Openings <IconSend size={14} />
-              </button>
             </div>
           </div>
 
           {/* 2. Communication Form */}
-          <div className="lg:col-span-2 bg-slate-50 rounded-[2.5rem] p-8 md:p-12">
+          <div className="lg:col-span-2 bg-slate-50 rounded-[2.5rem] p-6 md:p-12">
             <form className="grid md:grid-cols-2 gap-8">
               <div className="space-y-2">
                 <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">
@@ -143,9 +142,7 @@ export const ContactSection = () => {
               </div>
 
               <div className="md:col-span-2">
-                <button className="w-full md:w-auto px-12 py-5 bg-amber-500 text-slate-950 font-black uppercase tracking-widest text-xs rounded-xl hover:bg-slate-950 hover:text-white transition-all shadow-xl shadow-amber-500/20">
-                  Dispatch Message
-                </button>
+                <Button className="w-full md:w-auto">Dispatch Message</Button>
               </div>
             </form>
           </div>

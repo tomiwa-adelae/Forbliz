@@ -19,12 +19,12 @@ const miningFeatures = [
 
 export const MiningDetailSection = () => {
   return (
-    <section id="mining" className="py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+    <section id="mining" className="py-16 md:py-24 bg-white overflow-hidden">
+      <div className="container">
+        <div className="flex flex-col lg:flex-row items-center gap-10">
           {/* Left: Image with Technical Overlay */}
           <div className="w-full lg:w-1/2 relative group">
-            <div className="relative h-[600px] w-full rounded-[2rem] overflow-hidden shadow-2xl">
+            <div className="relative h-[500px] w-full rounded-[2rem] overflow-hidden shadow-2xl">
               <Image
                 src="/assets/images/mining-detail.jpg"
                 alt="Mining Operations"
@@ -51,18 +51,19 @@ export const MiningDetailSection = () => {
                 Service Category: 01
               </span>
             </div>
+            <div className="space-y-2">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 uppercase italic leading-tight">
+                Mining &{" "}
+                <span className="text-amber-500">Mineral Extraction.</span>
+              </h2>
 
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 uppercase italic leading-tight">
-              Mining & <br />
-              <span className="text-amber-500">Mineral Extraction.</span>
-            </h2>
-
-            <p className="text-slate-600 text-lg leading-relaxed">
-              FORBLIZ specializes in high-yield mineral extraction operations.
-              We combine advanced geological surveying with a massive fleet of
-              crushers and haulers to deliver raw material efficiency at scale.
-            </p>
-
+              <p className="text-slate-600 text-lg leading-relaxed">
+                FORBLIZ specializes in high-yield mineral extraction operations.
+                We combine advanced geological surveying with a massive fleet of
+                crushers and haulers to deliver raw material efficiency at
+                scale.
+              </p>
+            </div>
             {/* Feature List */}
             <ul className="grid sm:grid-cols-2 gap-4">
               {miningFeatures.map((feature, i) => (

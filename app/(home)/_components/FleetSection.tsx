@@ -26,8 +26,8 @@ const fleet = [
 
 export const FleetSection = () => {
   return (
-    <section className="py-20 bg-[#040d0a] text-white overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-20 bg-[#040d0a] text-white overflow-hidden">
+      <div className="container">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           {/* Left: Content & Stats */}
           <div className="w-full lg:w-1/3 space-y-8">
@@ -35,7 +35,7 @@ export const FleetSection = () => {
               <h2 className="text-amber-500 font-black uppercase tracking-[0.3em] text-sm mb-4">
                 Operational Power
               </h2>
-              <h3 className="text-5xl md:text-6xl font-black uppercase italic leading-none mb-6">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase italic leading-none mb-6">
                 The <span className="text-amber-500">Fleet.</span>
               </h3>
               <p className="text-gray-400 text-lg leading-relaxed">
@@ -63,11 +63,11 @@ export const FleetSection = () => {
           </div>
 
           {/* Right: Fleet Showcase */}
-          <div className="w-full lg:w-2/3 grid md:grid-cols-2 gap-6">
+          <div className="w-full lg:w-2/3 grid md:grid-cols-2 gap-4">
             {fleet.map((item, i) => (
               <div
                 key={i}
-                className="group relative bg-white/5 border border-white/10 rounded-3xl p-6 transition-all hover:border-amber-500/50"
+                className="group relative bg-white/5 border border-white/10 rounded-3xl p-3 transition-all hover:border-amber-500/50"
               >
                 <div className="relative h-48 w-full mb-6 rounded-2xl overflow-hidden">
                   <Image

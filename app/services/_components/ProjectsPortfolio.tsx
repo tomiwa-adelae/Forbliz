@@ -8,6 +8,7 @@ import {
   IconArrowNarrowRight,
   IconCategory,
 } from "@tabler/icons-react";
+import { Button } from "@/components/ui/button";
 
 const projects = [
   {
@@ -38,40 +39,29 @@ const projects = [
 
 export const ProjectsPortfolio = () => {
   return (
-    <section className="py-24 bg-[#f8fafc]">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-[#f8fafc]">
+      <div className="container">
         {/* Header Area */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div className="flex flex-col mb-10">
           <div className="max-w-2xl">
             <h2 className="text-amber-600 font-black uppercase tracking-[0.4em] text-sm mb-4">
               Proven Results
             </h2>
-            <h3 className="text-4xl md:text-6xl font-black text-slate-900 leading-none uppercase italic">
-              Impact <br />
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-none uppercase italic">
+              Impact{" "}
               <span className="text-slate-400 font-normal not-italic">
                 Delivered.
               </span>
             </h3>
           </div>
-          <div className="flex items-center gap-4 text-slate-500 font-bold uppercase tracking-widest text-xs">
-            <span>Filter by Sector:</span>
-            <div className="h-px w-12 bg-slate-300" />
-            <button className="text-amber-600">All</button>
-            <button className="hover:text-slate-900 transition-colors">
-              Mining
-            </button>
-            <button className="hover:text-slate-900 transition-colors">
-              Civil
-            </button>
-          </div>
         </div>
 
         {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
             <div key={i} className="group cursor-pointer">
               {/* Image Container */}
-              <div className="relative h-[450px] w-full rounded-[2.5rem] overflow-hidden mb-8 shadow-2xl bg-slate-200">
+              <div className="relative h-[450px] w-full rounded-[2.5rem] overflow-hidden mb-4 shadow-2xl bg-slate-200">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -113,16 +103,16 @@ export const ProjectsPortfolio = () => {
                     </span>
                   </div>
                 </div>
-                <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-900 group-hover:bg-slate-900 group-hover:text-white transition-all shadow-sm">
-                  <IconArrowNarrowRight size={24} />
-                </div>
+                <Button variant={"secondary"} size={"icon"}>
+                  <IconArrowNarrowRight />
+                </Button>
               </div>
             </div>
           ))}
         </div>
 
         {/* Call to Partnership Box */}
-        <div className="mt-20 p-12 bg-white rounded-[3rem] border border-slate-200 shadow-xl flex flex-col md:flex-row items-center gap-12 relative overflow-hidden">
+        <div className="mt-16 p-8 md:p-12 bg-white rounded-[3rem] border border-slate-200 shadow-xl flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
           <div className="absolute top-0 right-0 p-12 opacity-5 text-slate-900 pointer-events-none">
             <IconCategory size={200} />
           </div>
@@ -136,9 +126,7 @@ export const ProjectsPortfolio = () => {
             </p>
           </div>
           <div className="md:w-1/3 text-right w-full relative z-10">
-            <button className="w-full md:w-auto px-10 py-5 bg-amber-500 text-slate-950 font-black uppercase tracking-[0.2em] text-xs rounded-2xl hover:bg-slate-950 hover:text-white transition-all">
-              Download Portfolio PDF
-            </button>
+            <Button className="w-full md:w-auto">Download Portfolio PDF</Button>
           </div>
         </div>
       </div>

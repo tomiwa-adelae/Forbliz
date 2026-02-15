@@ -11,21 +11,21 @@ import { Button } from "@/components/ui/button";
 
 export const ServiceInquiry = () => {
   return (
-    <section className="py-24 bg-[#040d0a] text-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-[#040d0a] text-white relative overflow-hidden">
       {/* Background Accent */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-50" />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container relative z-10">
         <div className="bg-white/5 border border-white/10 rounded-[3rem] overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             {/* Left: Contact Info & CTA */}
-            <div className="lg:w-2/5 p-12 lg:p-16 bg-amber-500 text-slate-950 flex flex-col justify-between">
+            <div className="lg:w-2/5 p-8 md:p-10 bg-primary text-slate-950 flex flex-col justify-between">
               <div>
                 <h2 className="text-xs font-black uppercase tracking-[0.3em] mb-4 opacity-70">
                   Project Intake
                 </h2>
-                <h3 className="text-4xl md:text-5xl font-black uppercase italic leading-none mb-8">
-                  Request a <br /> Proposal.
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase italic leading-none mb-2">
+                  Request a <br className="hidden lg:block" /> Proposal.
                 </h3>
                 <p className="font-medium text-lg leading-relaxed mb-10">
                   Submit your project specifications or site requirements. Our
@@ -50,7 +50,7 @@ export const ServiceInquiry = () => {
             </div>
 
             {/* Right: Simplified Intake Form */}
-            <div className="lg:w-3/5 p-12 lg:p-16 space-y-8">
+            <div className="lg:w-3/5 p-8 md:p-10 space-y-8">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-[10px] font-black uppercase tracking-widest text-gray-500">
@@ -87,8 +87,8 @@ export const ServiceInquiry = () => {
                 />
               </div>
 
-              <Button className="w-full h-16 bg-amber-500 hover:bg-white hover:text-slate-950 text-slate-950 font-black uppercase tracking-widest rounded-xl transition-all flex gap-3">
-                Send Inquiry <IconMailForward size={20} />
+              <Button className="w-full">
+                Send Inquiry <IconMailForward />
               </Button>
 
               <div className="flex items-center gap-6 pt-4 grayscale opacity-40">

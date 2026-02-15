@@ -44,20 +44,19 @@ const expertise = [
 
 export const ExpertiseSection = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-20 bg-white">
+      <div className="container">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div className="max-w-2xl">
-            <h2 className="text-sm font-black uppercase tracking-[0.4em] text-amber-600 mb-4">
+        <div className="flex flex-col justify-between gap-2 mb-8">
+          <div className="">
+            <h2 className="text-sm font-black uppercase tracking-[0.4em] text-amber-600 mb-2">
               Core Competencies
             </h2>
-            <h3 className="text-4xl md:text-6xl font-black text-slate-900 leading-none uppercase italic">
-              Heavy Industry <br />
-              <span className="text-slate-400">Solutions.</span>
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-none uppercase italic">
+              Heavy Industry <span className="text-slate-400">Solutions.</span>
             </h3>
           </div>
-          <p className="max-w-md text-slate-600 font-medium leading-relaxed">
+          <p className="text-slate-600 font-medium leading-relaxed">
             FORBLIZ provides end-to-end operational support for the most
             demanding environments, bridging the gap between resource discovery
             and infrastructure.
@@ -65,11 +64,11 @@ export const ExpertiseSection = () => {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-4">
           {expertise.map((item, i) => (
             <div
               key={i}
-              className="group relative h-[450px] rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+              className="group relative h-[350px] rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
             >
               {/* 1. IMAGE LAYER: This was missing */}
               <div className="absolute inset-0 z-0 transition-transform duration-700 group-hover:scale-110">

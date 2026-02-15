@@ -9,6 +9,7 @@ import {
   IconArrowUpRight,
   IconFilter,
 } from "@tabler/icons-react";
+import { Button } from "@/components/ui/button";
 
 const machinery = [
   {
@@ -39,35 +40,29 @@ const machinery = [
 
 export const FleetCatalog = () => {
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="container">
         {/* Catalog Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div className="flex flex-col mb-10 gap-8">
           <div className="max-w-xl">
             <h2 className="text-amber-600 font-black uppercase tracking-[0.4em] text-sm mb-4">
               Hardware Asset List
             </h2>
-            <h3 className="text-4xl md:text-6xl font-black text-slate-900 leading-none uppercase italic">
-              Heavy <br />
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-none uppercase italic">
+              Heavy <br className="hidden lg:block" />
               <span className="text-slate-400">Inventory.</span>
             </h3>
-          </div>
-
-          <div className="flex gap-4">
-            <button className="flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-xl text-xs font-black uppercase tracking-widest">
-              <IconFilter size={18} className="text-amber-500" /> Filter Fleet
-            </button>
           </div>
         </div>
 
         {/* Machinery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {machinery.map((item, i) => (
             <div
               key={i}
               className="group relative bg-slate-50 rounded-[2.5rem] p-4 border border-slate-200 transition-all hover:shadow-2xl hover:shadow-amber-500/10"
             >
-              <div className="relative h-[350px] w-full rounded-[2rem] overflow-hidden mb-8">
+              <div className="relative h-[350px] w-full rounded-[2rem] overflow-hidden mb-4">
                 <Image
                   src={item.image}
                   alt={item.name}
@@ -79,9 +74,9 @@ export const FleetCatalog = () => {
                 </div>
               </div>
 
-              <div className="px-6 pb-6">
-                <div className="flex justify-between items-center mb-6">
-                  <h4 className="text-3xl font-black text-slate-900 uppercase italic tracking-tighter">
+              <div>
+                <div className="flex justify-between items-center mb-4">
+                  <h4 className="text-2xl font-black text-slate-900 uppercase italic tracking-tighter">
                     {item.name}
                   </h4>
                   <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:bg-amber-500 group-hover:text-slate-900 group-hover:border-amber-500 transition-all">
@@ -108,8 +103,8 @@ export const FleetCatalog = () => {
         </div>
 
         {/* Fleet Footnote */}
-        <div className="mt-16 p-8 bg-slate-950 rounded-[2rem] flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex items-center gap-6 text-white">
+        <div className="mt-10 p-8 bg-slate-950 rounded-[2rem] flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-3 text-white">
             <div className="w-14 h-14 rounded-2xl bg-amber-500 flex items-center justify-center text-slate-950">
               <IconManualGearbox size={32} />
             </div>
@@ -123,9 +118,7 @@ export const FleetCatalog = () => {
               </p>
             </div>
           </div>
-          <button className="px-10 py-4 bg-white text-slate-950 font-black uppercase tracking-widest rounded-xl hover:bg-amber-500 transition-colors">
-            Enquire for Rental
-          </button>
+          <Button className="w-full md:w-auto">Enquire for Rental</Button>
         </div>
       </div>
     </section>

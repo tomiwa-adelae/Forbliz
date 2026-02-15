@@ -62,10 +62,10 @@ export const ProjectsGrid = () => {
       : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="container">
         {/* Filter Navigation */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
+        <div className="flex flex-wrap justify-center gap-4 mb-10">
           {categories.map((cat) => (
             <button
               key={cat.value}
@@ -83,10 +83,10 @@ export const ProjectsGrid = () => {
         </div>
 
         {/* The Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-6">
           {filteredProjects.map((project) => (
             <div key={project.id} className="group cursor-pointer">
-              <div className="relative h-[500px] w-full rounded-[2.5rem] overflow-hidden mb-8 shadow-2xl">
+              <div className="relative h-[400px] w-full rounded-[2.5rem] overflow-hidden mb-8 shadow-2xl">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -101,7 +101,7 @@ export const ProjectsGrid = () => {
                   <div className="inline-block px-4 py-1 bg-amber-500 text-slate-950 text-[10px] font-black uppercase tracking-widest rounded-md mb-4">
                     {project.highlight}
                   </div>
-                  <h4 className="text-3xl md:text-4xl font-black uppercase italic leading-none group-hover:text-amber-500 transition-colors">
+                  <h4 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase italic leading-none group-hover:text-amber-500 transition-colors">
                     {project.title}
                   </h4>
                 </div>

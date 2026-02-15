@@ -8,15 +8,16 @@ import {
   IconUserCircle,
   IconMapPin,
 } from "@tabler/icons-react";
+import { Button } from "@/components/ui/button";
 
 export default function RequestQuotePage() {
   return (
     <main className="min-h-screen bg-white">
       {/* 1. Header Section */}
       <section className="pt-32 pb-12 bg-slate-900 text-white">
-        <div className="container mx-auto px-4">
+        <div className="container">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-black uppercase italic leading-none mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase italic leading-none mb-6">
               Project <span className="text-amber-500">Initiation.</span>
             </h1>
             <p className="text-gray-400 text-lg font-medium leading-relaxed">
@@ -29,16 +30,16 @@ export default function RequestQuotePage() {
       </section>
 
       {/* 2. Form Body */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-20">
+        <div className="container">
           <div className="grid lg:grid-cols-3 gap-16">
             {/* Form Column */}
             <div className="lg:col-span-2 space-y-12">
               {/* Step 1: Contact Personnel */}
               <div className="space-y-6">
-                <div className="flex items-center gap-4 text-amber-600">
+                <div className="flex items-center gap-1 text-amber-600">
                   <IconUserCircle size={28} />
-                  <h3 className="text-xl font-black uppercase italic tracking-widest text-slate-900">
+                  <h3 className="text-lg font-black uppercase italic tracking-widest text-slate-900">
                     01. Contact Personnel
                   </h3>
                 </div>
@@ -68,9 +69,9 @@ export default function RequestQuotePage() {
 
               {/* Step 2: Project Scope */}
               <div className="space-y-6">
-                <div className="flex items-center gap-4 text-amber-600">
+                <div className="flex items-center gap-1 text-amber-600">
                   <IconMapPin size={28} />
-                  <h3 className="text-xl font-black uppercase italic tracking-widest text-slate-900">
+                  <h3 className="text-lg font-black uppercase italic tracking-widest text-slate-900">
                     02. Project Scope
                   </h3>
                 </div>
@@ -102,9 +103,9 @@ export default function RequestQuotePage() {
 
               {/* Step 3: Equipment Needs */}
               <div className="space-y-6">
-                <div className="flex items-center gap-4 text-amber-600">
+                <div className="flex items-center gap-1 text-amber-600">
                   <IconTractor size={28} />
-                  <h3 className="text-xl font-black uppercase italic tracking-widest text-slate-900">
+                  <h3 className="text-lg font-black uppercase italic tracking-widest text-slate-900">
                     03. Equipment Requirements
                   </h3>
                 </div>
@@ -115,9 +116,7 @@ export default function RequestQuotePage() {
                 />
               </div>
 
-              <button className="w-full md:w-auto px-16 py-6 bg-slate-900 text-white font-black uppercase tracking-[0.3em] italic text-sm hover:bg-amber-500 hover:text-slate-950 transition-all shadow-xl">
-                Submit RFQ Package
-              </button>
+              <Button className="w-full md:w-auto">Submit RFQ Package</Button>
             </div>
 
             {/* Support Sidebar */}

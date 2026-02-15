@@ -16,14 +16,14 @@ export default function ProjectDetail() {
     <main className="bg-white min-h-screen">
       {/* 1. Technical Header */}
       <section className="pt-32 pb-16 bg-[#020806] text-white">
-        <div className="container mx-auto px-4">
+        <div className="container">
           <div className="grid lg:grid-cols-3 gap-12 items-end">
             <div className="lg:col-span-2">
               <div className="flex items-center gap-3 text-amber-500 mb-6 font-black uppercase tracking-[0.3em] text-xs">
                 <IconLocation size={16} /> Delta State, Nigeria
               </div>
               <h1 className="text-5xl md:text-7xl font-black uppercase italic leading-none mb-8">
-                Delta Quarry <br />
+                Delta Quarry <br className="hidden lg:block" />
                 <span className="text-amber-500 text-3xl md:text-5xl border-l-4 border-amber-500 pl-6 block mt-4 not-italic font-bold tracking-normal">
                   Phase II Expansion & Extraction
                 </span>
@@ -64,8 +64,8 @@ export default function ProjectDetail() {
       </section>
 
       {/* 2. Project Narrative & Machinery */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-20">
+        <div className="container">
           <div className="grid lg:grid-cols-3 gap-16">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-12">
@@ -132,8 +132,8 @@ export default function ProjectDetail() {
       </section>
 
       {/* 3. Final Result / Impact Section */}
-      <section className="py-20 bg-slate-900 text-white rounded-t-[4rem]">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-20 bg-slate-900 text-white rounded-t-[4rem]">
+        <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <IconChartInfographic size={48} className="text-amber-500" />

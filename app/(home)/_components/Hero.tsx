@@ -8,7 +8,7 @@ import { IconArrowRight, IconCone, IconTractor } from "@tabler/icons-react";
 
 export const Hero = () => {
   return (
-    <section className="relative w-full min-h-[80vh] py-24 overflow-hidden flex items-center justify-center bg-[#040d0a]">
+    <section className="relative w-full min-h-[80vh] py-16 md:py-24 overflow-hidden flex items-center justify-center bg-[#040d0a]">
       {/* 1. Background Visuals */}
       <div className="absolute inset-0 z-0">
         <Image

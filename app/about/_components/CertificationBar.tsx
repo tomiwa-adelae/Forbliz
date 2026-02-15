@@ -1,7 +1,7 @@
 export const CertificationBar = () => {
   return (
     <div className="py-12 bg-slate-50 border-t border-slate-200">
-      <div className="container mx-auto px-4">
+      <div className="container">
         <div className="flex flex-wrap justify-center items-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
           {/* Replace with actual regulatory logos */}
           <div className="text-sm font-black text-slate-900 tracking-tighter">

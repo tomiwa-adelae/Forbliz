@@ -10,8 +10,8 @@ import Image from "next/image";
 
 export const FootprintSection = () => {
   return (
-    <section className="py-24 bg-slate-50 overflow-hidden relative">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-slate-50 overflow-hidden relative">
+      <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column: Map/Visual Representation */}
           <div className="relative group">
@@ -42,8 +42,8 @@ export const FootprintSection = () => {
               <h2 className="text-amber-600 font-black uppercase tracking-[0.4em] text-sm">
                 Our Reach
               </h2>
-              <h3 className="text-4xl md:text-5xl font-black text-slate-900 uppercase italic leading-tight">
-                Strategic Presence. <br />
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 uppercase italic leading-tight">
+                Strategic Presence. <br className="hidden lg:block" />
                 <span className="text-slate-400">Total Synergy.</span>
               </h3>
             </div>

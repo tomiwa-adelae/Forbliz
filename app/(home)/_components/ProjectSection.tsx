@@ -34,34 +34,23 @@ const projects = [
 
 export const ProjectSection = () => {
   return (
-    <section className="py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-16 md:py-24 bg-white overflow-hidden">
+      <div className="container">
         {/* Header Area */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-          <div className="max-w-xl">
-            <h2 className="text-amber-600 font-black uppercase tracking-[0.4em] text-sm mb-4">
-              Proven Track Record
-            </h2>
-            <h3 className="text-4xl md:text-6xl font-black text-slate-900 uppercase italic leading-none">
-              Engineering <br />
-              <span className="text-slate-400 font-normal not-italic">
-                Milestones.
-              </span>
-            </h3>
-          </div>
-          <Link
-            href="/projects"
-            className="group flex items-center gap-3 text-slate-900 font-black uppercase tracking-widest hover:text-amber-600 transition-colors"
-          >
-            View All Projects
-            <div className="p-2 bg-slate-100 rounded-full group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
-              <IconArrowRight size={20} />
-            </div>
-          </Link>
+        <div className="mb-8">
+          <h2 className="text-amber-600 font-black uppercase tracking-[0.4em] text-sm mb-4">
+            Proven Track Record
+          </h2>
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 uppercase italic leading-none">
+            Engineering{" "}
+            <span className="text-slate-400 font-normal not-italic">
+              Milestones.
+            </span>
+          </h3>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-8">
           {projects.map((project, i) => (
             <div key={i} className="group cursor-pointer">
               <div className="relative h-[400px] w-full rounded-3xl overflow-hidden mb-6 shadow-xl">
@@ -88,10 +77,10 @@ export const ProjectSection = () => {
                     {project.year}
                   </div>
                 </div>
-                <h4 className="text-2xl font-black text-slate-900 uppercase italic group-hover:text-amber-600 transition-colors leading-tight">
+                <h4 className="text-lg font-bold text-slate-900 uppercase italic group-hover:text-amber-600 transition-colors leading-tight">
                   {project.title}
                 </h4>
-                <div className="flex items-center gap-1 text-slate-500 font-medium">
+                <div className="flex items-center gap-1 text-sm text-slate-500 font-medium">
                   <IconMapPin size={18} className="text-amber-500" />
                   {project.location}
                 </div>
