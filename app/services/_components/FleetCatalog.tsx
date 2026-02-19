@@ -10,6 +10,8 @@ import {
   IconFilter,
 } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
+import { ComingSoon } from "@/components/ComingSoon";
+import { EMAIL } from "@/constants";
 
 const machinery = [
   {
@@ -56,7 +58,8 @@ export const FleetCatalog = () => {
         </div>
 
         {/* Machinery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid relative grid-cols-1 md:grid-cols-2 gap-4">
+          <ComingSoon />
           {machinery.map((item, i) => (
             <div
               key={i}
@@ -118,7 +121,9 @@ export const FleetCatalog = () => {
               </p>
             </div>
           </div>
-          <Button className="w-full md:w-auto">Enquire for Rental</Button>
+          <Button asChild className="w-full md:w-auto">
+            <a href={`mailto:${EMAIL}`}>Enquire for Rental</a>
+          </Button>
         </div>
       </div>
     </section>

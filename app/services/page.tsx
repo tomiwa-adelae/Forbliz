@@ -6,6 +6,14 @@ import { LogisticsDetailSection } from "./_components/LogisticsDetailSection";
 import { ServiceInquiry } from "./_components/ServiceInquiry";
 import { FleetCatalog } from "./_components/FleetCatalog";
 import { ProjectsPortfolio } from "./_components/ProjectsPortfolio";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Services Forbliz Global Resources | Heavy Equipment & Industrial Services",
+  description:
+    "Forbliz Global Resources Ltd is a premier industrial partner providing heavy equipment sourcing, civil infrastructure engineering, and site mobilization across Nigeria.",
+};
 
 const page = () => {
   return (

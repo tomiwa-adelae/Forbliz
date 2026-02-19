@@ -11,7 +11,7 @@ const page = () => {
     <div>
       <Hero />
       <ExpertiseSection />
-      <FleetSection />
+      {/* <FleetSection /> */}
       <ProjectSection />
       <SafetySection />
       <FinalCTA />

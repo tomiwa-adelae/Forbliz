@@ -12,6 +12,7 @@ import {
   IconExternalLink,
 } from "@tabler/icons-react";
 import { Logo } from "./Logo";
+import { ADDRESS, EMAIL, PHONE } from "@/constants";
 
 const footerLinks = [
   {
@@ -92,15 +93,15 @@ export const Footer = () => {
             <ul className="space-y-4">
               <li className="flex gap-3 text-sm text-gray-400">
                 <IconMapPin size={20} className="text-amber-500 shrink-0" />
-                <span>Lagos, Nigeria</span>
+                <span>{ADDRESS}</span>
               </li>
               <li className="flex gap-3 text-sm text-gray-400">
                 <IconPhone size={20} className="text-amber-500 shrink-0" />
-                <span>+234 (0) 800 FORBLIZ</span>
+                <a href={`tel:${PHONE}`}>{PHONE}</a>
               </li>
               <li className="flex gap-3 text-sm text-gray-400">
                 <IconMail size={20} className="text-amber-500 shrink-0" />
-                <span>info@forbliz.com</span>
+                <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
               </li>
             </ul>
           </div>
@@ -118,7 +119,7 @@ export const Footer = () => {
             className="group flex items-center gap-3 px-6 py-2 bg-emerald-500/5 hover:bg-emerald-500/10 border border-emerald-500/10 rounded-full transition-all"
           >
             <span className="text-[10px] font-black uppercase tracking-widest text-emerald-500/60 group-hover:text-emerald-500">
-              Part of AIRMOB Nigeria Limited
+              A subsidiary of AIRMOB NIGERIA LIMITED
             </span>
             <IconExternalLink size={14} className="text-emerald-500" />
           </Link>

@@ -10,6 +10,14 @@ import {
   IconChartInfographic,
   IconQuote,
 } from "@tabler/icons-react";
+import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
+
+export const metadata: Metadata = {
+  title:
+    "Projects Forbliz Global Resources | Heavy Equipment & Industrial Services",
+  description:
+    "Forbliz Global Resources Ltd is a premier industrial partner providing heavy equipment sourcing, civil infrastructure engineering, and site mobilization across Nigeria.",
+};
 
 export default function ProjectDetail() {
   return (

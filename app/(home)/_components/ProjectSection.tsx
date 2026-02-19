@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { IconMapPin, IconArrowRight, IconCalendar } from "@tabler/icons-react";
+import { ComingSoon } from "@/components/ComingSoon";
 
 const projects = [
   {
@@ -34,7 +35,7 @@ const projects = [
 
 export const ProjectSection = () => {
   return (
-    <section className="py-16 md:py-16 md:py-24 bg-white overflow-hidden">
+    <section className="py-16 md:py-24 bg-slate-100 overflow-hidden">
       <div className="container">
         {/* Header Area */}
         <div className="mb-8">
@@ -52,7 +53,8 @@ export const ProjectSection = () => {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-8">
           {projects.map((project, i) => (
-            <div key={i} className="group cursor-pointer">
+            <div key={i} className="group relative cursor-pointer">
+              <ComingSoon />
               <div className="relative h-[400px] w-full rounded-3xl overflow-hidden mb-6 shadow-xl">
                 <Image
                   src={project.image}

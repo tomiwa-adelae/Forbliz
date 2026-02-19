@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import {
   IconClipboardCheck,
@@ -9,6 +7,16 @@ import {
   IconMapPin,
 } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
+import { PHONE } from "@/constants";
+import { QuoteForm } from "./_components/QuoteForm";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Request Quote Forbliz Global Resources | Heavy Equipment & Industrial Services",
+  description:
+    "Forbliz Global Resources Ltd is a premier industrial partner providing heavy equipment sourcing, civil infrastructure engineering, and site mobilization across Nigeria.",
+};
 
 export default function RequestQuotePage() {
   return (
@@ -35,88 +43,7 @@ export default function RequestQuotePage() {
           <div className="grid lg:grid-cols-3 gap-16">
             {/* Form Column */}
             <div className="lg:col-span-2 space-y-12">
-              {/* Step 1: Contact Personnel */}
-              <div className="space-y-6">
-                <div className="flex items-center gap-1 text-amber-600">
-                  <IconUserCircle size={28} />
-                  <h3 className="text-lg font-black uppercase italic tracking-widest text-slate-900">
-                    01. Contact Personnel
-                  </h3>
-                </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    className="w-full border-b-2 border-slate-200 py-4 outline-none focus:border-amber-500 transition-all font-medium"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Corporate Email"
-                    className="w-full border-b-2 border-slate-200 py-4 outline-none focus:border-amber-500 transition-all font-medium"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Company Name"
-                    className="w-full border-b-2 border-slate-200 py-4 outline-none focus:border-amber-500 transition-all font-medium"
-                  />
-                  <input
-                    type="tel"
-                    placeholder="Phone Number"
-                    className="w-full border-b-2 border-slate-200 py-4 outline-none focus:border-amber-500 transition-all font-medium"
-                  />
-                </div>
-              </div>
-
-              {/* Step 2: Project Scope */}
-              <div className="space-y-6">
-                <div className="flex items-center gap-1 text-amber-600">
-                  <IconMapPin size={28} />
-                  <h3 className="text-lg font-black uppercase italic tracking-widest text-slate-900">
-                    02. Project Scope
-                  </h3>
-                </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <select className="w-full border-b-2 border-slate-200 py-4 outline-none focus:border-amber-500 transition-all font-medium bg-transparent">
-                    <option>Select Service Category</option>
-                    <option>Surface Mining</option>
-                    <option>Civil Construction</option>
-                    <option>Heavy Haulage / Logistics</option>
-                    <option>Equipment Rental</option>
-                  </select>
-                  <input
-                    type="text"
-                    placeholder="Project Location (State/City)"
-                    className="w-full border-b-2 border-slate-200 py-4 outline-none focus:border-amber-500 transition-all font-medium"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Estimated Tonnage (if applicable)"
-                    className="w-full border-b-2 border-slate-200 py-4 outline-none focus:border-amber-500 transition-all font-medium"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Anticipated Start Date"
-                    className="w-full border-b-2 border-slate-200 py-4 outline-none focus:border-amber-500 transition-all font-medium"
-                  />
-                </div>
-              </div>
-
-              {/* Step 3: Equipment Needs */}
-              <div className="space-y-6">
-                <div className="flex items-center gap-1 text-amber-600">
-                  <IconTractor size={28} />
-                  <h3 className="text-lg font-black uppercase italic tracking-widest text-slate-900">
-                    03. Equipment Requirements
-                  </h3>
-                </div>
-                <textarea
-                  rows={4}
-                  placeholder="List specific machinery needed or describe technical challenges..."
-                  className="w-full bg-slate-50 rounded-2xl p-6 outline-none border border-slate-200 focus:border-amber-500 transition-all"
-                />
-              </div>
-
-              <Button className="w-full md:w-auto">Submit RFQ Package</Button>
+              <QuoteForm />
             </div>
 
             {/* Support Sidebar */}
@@ -151,7 +78,12 @@ export default function RequestQuotePage() {
                   For urgent mobilization or equipment failure, call our
                   emergency hotline.
                 </p>
-                <p className="text-2xl font-black">+234 800-FORBLIZ</p>
+                <a
+                  href={`tel:${PHONE}`}
+                  className="text-2xl font-black hover:underline"
+                >
+                  {PHONE}
+                </a>
               </div>
             </div>
           </div>

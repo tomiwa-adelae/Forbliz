@@ -2,6 +2,15 @@ import React from "react";
 import { IconMapPin, IconPhone, IconMail } from "@tabler/icons-react";
 import { CertificationBar } from "../about/_components/CertificationBar";
 import { ContactSection } from "./_components/ContactSection";
+import { PHONE } from "@/constants";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Contact Forbliz Global Resources | Heavy Equipment & Industrial Services",
+  description:
+    "Forbliz Global Resources Ltd is a premier industrial partner providing heavy equipment sourcing, civil infrastructure engineering, and site mobilization across Nigeria.",
+};
 
 const ContactPage = () => {
   return (
@@ -22,11 +31,14 @@ const ContactPage = () => {
 
             {/* Quick Contact Pills */}
             <div className="hidden lg:flex flex-col gap-1 text-right">
-              <div className="flex items-center justify-end gap-1 text-amber-500">
+              <div className="flex items-center hover:underline hover:text-primary justify-end gap-1 text-amber-500">
                 <IconPhone size={20} />
-                <span className="text-base font-bold text-white">
-                  +234 (0) 800 FORBLIZ
-                </span>
+                <a
+                  href={`tel:${PHONE}`}
+                  className="text-base font-bold text-white hover:text-primary transition-all"
+                >
+                  {PHONE}
+                </a>
               </div>
             </div>
           </div>
@@ -57,7 +69,7 @@ const ContactPage = () => {
       </section>
 
       {/* 4. Certifications & Compliance */}
-      <CertificationBar />
+      {/* <CertificationBar /> */}
     </main>
   );
 };

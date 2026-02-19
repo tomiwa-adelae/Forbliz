@@ -79,7 +79,7 @@ export const CivilDetailSection = () => {
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               {/* Floating Stat Badge */}
-              <div className="absolute top-8 left-8 bg-slate-900 border border-white/10 p-6 rounded-2xl shadow-xl text-white backdrop-blur-md">
+              <div className="absolute hidden top-8 left-8 bg-slate-900 border border-white/10 p-6 rounded-2xl shadow-xl text-white backdrop-blur-md">
                 <p className="text-4xl font-black leading-none text-amber-500">
                   500+
                 </p>

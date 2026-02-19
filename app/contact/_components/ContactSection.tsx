@@ -1,6 +1,10 @@
 "use client";
 
-import React from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+
+import React, { useTransition } from "react";
+import * as z from "zod";
 import {
   IconMapPin,
   IconHeadset,
@@ -10,8 +14,51 @@ import {
   IconBriefcase,
 } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
+import { ADDRESS, EMAIL, PHONE } from "@/constants";
+import { toast } from "sonner";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Textarea } from "@/components/ui/textarea";
+
+const formSchema = z.object({
+  firstName: z.string().min(2, "Required"),
+  lastName: z.string().min(2, "Required"),
+  email: z.string().email("Invalid corporate email"),
+  phone: z.string().min(10, "Phone required"),
+  subject: z.enum(["tenders", "logistics", "general", "rental"]),
+  message: z.string().min(10, "Please provide more project detail"),
+});
 
 export const ContactSection = () => {
+  const [pending, startTransition] = useTransition();
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: { subject: "general" },
+  });
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    startTransition(async () => {
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          body: JSON.stringify(values),
+        });
+        if (res.ok) toast.success("Message Dispatched to Forbliz Operations.");
+      } catch (error) {
+        toast.error("Network error. Please try again.");
+      }
+    });
+  }
+
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container">
@@ -37,25 +84,27 @@ export const ContactSection = () => {
 
                 <div className="flex gap-4">
                   <IconMapPin className="text-amber-500 shrink-0" />
-                  <p className="text-sm font-medium text-gray-300">
-                    12 Industrial Estate Road,{" "}
-                    <br className="hidden lg:block" />
-                    Ikeja, Lagos, Nigeria.
-                  </p>
+                  <p className="text-sm font-medium text-gray-300">{ADDRESS}</p>
                 </div>
 
                 <div className="flex gap-4">
                   <IconHeadset className="text-amber-500 shrink-0" />
-                  <p className="text-sm font-medium text-gray-300">
-                    +234 (0) 1 456 7890
-                  </p>
+                  <a
+                    href={`tel:${PHONE}`}
+                    className="text-sm font-medium text-gray-300"
+                  >
+                    {PHONE}
+                  </a>
                 </div>
 
                 <div className="flex gap-4">
                   <IconMail className="text-amber-500 shrink-0" />
-                  <p className="text-sm font-medium text-gray-300">
-                    ops@forbliz.com
-                  </p>
+                  <a
+                    href={`mailto:${EMAIL}`}
+                    className="text-sm font-medium text-gray-300"
+                  >
+                    {EMAIL}
+                  </a>
                 </div>
 
                 <div className="pt-6 border-t border-white/10 flex items-center gap-3">
@@ -72,7 +121,7 @@ export const ContactSection = () => {
             </div>
 
             {/* Careers CTA */}
-            <div className="p-8 border-2 border-dashed border-slate-200 rounded-[2rem] group hover:border-amber-500 transition-colors">
+            <div className="p-8 hidden border-2 border-dashed border-slate-200 rounded-[2rem] group hover:border-amber-500 transition-colors">
               <IconBriefcase className="text-slate-400 group-hover:text-amber-600 mb-4 transition-colors" />
               <h5 className="font-black uppercase italic text-slate-900">
                 Join the Crew
@@ -85,66 +134,161 @@ export const ContactSection = () => {
 
           {/* 2. Communication Form */}
           <div className="lg:col-span-2 bg-slate-50 rounded-[2.5rem] p-6 md:p-12">
-            <form className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-2">
-                <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">
-                  Your Identity
-                </label>
-                <input
-                  type="text"
-                  placeholder="Full Name / Company"
-                  className="w-full bg-white border border-slate-200 rounded-xl px-6 py-4 outline-none focus:border-amber-500 transition-all"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  placeholder="email@company.com"
-                  className="w-full bg-white border border-slate-200 rounded-xl px-6 py-4 outline-none focus:border-amber-500 transition-all"
-                />
-              </div>
-
-              <div className="md:col-span-2 space-y-2">
-                <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">
-                  Inquiry Department
-                </label>
-                <div className="flex flex-wrap gap-3">
-                  {["Tenders", "Logistics", "General", "Equipment Rental"].map(
-                    (dept) => (
-                      <label key={dept} className="cursor-pointer">
-                        <input
-                          type="radio"
-                          name="dept"
-                          className="peer hidden"
-                        />
-                        <span className="px-6 py-3 bg-white border border-slate-200 rounded-full text-xs font-bold text-slate-500 peer-checked:bg-slate-900 peer-checked:text-amber-500 peer-checked:border-slate-900 transition-all inline-block">
-                          {dept}
-                        </span>
-                      </label>
-                    ),
-                  )}
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-8"
+              >
+                <div className="grid md:grid-cols-2 gap-6">
+                  <FormField
+                    control={form.control}
+                    name="firstName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-[10px] uppercase font-black tracking-widest text-slate-500">
+                          First Name
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="John"
+                            {...field}
+                            className="rounded-xl border-slate-200"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="lastName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-[10px] uppercase font-black tracking-widest text-slate-500">
+                          Last Name
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="Doe"
+                            {...field}
+                            className="rounded-xl border-slate-200"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
                 </div>
-              </div>
 
-              <div className="md:col-span-2 space-y-2">
-                <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">
-                  Detailed Message
-                </label>
-                <textarea
-                  rows={5}
-                  placeholder="Briefly describe your project scope or equipment needs..."
-                  className="w-full bg-white border border-slate-200 rounded-xl px-6 py-4 outline-none focus:border-amber-500 transition-all resize-none"
+                <div className="grid md:grid-cols-2 gap-6">
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-[10px] uppercase font-black tracking-widest text-slate-500">
+                          Corporate Email
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="john@company.com"
+                            {...field}
+                            className="rounded-xl"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-[10px] uppercase font-black tracking-widest text-slate-500">
+                          Phone
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="+234..."
+                            {...field}
+                            className="rounded-xl"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <FormField
+                  control={form.control}
+                  name="subject"
+                  render={({ field }) => (
+                    <FormItem className="space-y-3">
+                      <FormLabel className="text-[10px] uppercase font-black tracking-widest text-slate-500">
+                        Department
+                      </FormLabel>
+                      <FormControl>
+                        <RadioGroup
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                          className="flex flex-wrap gap-3"
+                        >
+                          {["tenders", "logistics", "general", "rental"].map(
+                            (s) => (
+                              <FormItem
+                                key={s}
+                                className="flex items-center space-x-0 space-y-0"
+                              >
+                                <FormControl>
+                                  <RadioGroupItem
+                                    value={s}
+                                    className="peer hidden"
+                                  />
+                                </FormControl>
+                                <FormLabel className="cursor-pointer px-6 py-3 bg-white border border-slate-200 rounded-full text-xs font-bold text-slate-500 peer-data-[state=checked]:bg-slate-900 peer-data-[state=checked]:text-amber-500 transition-all">
+                                  {s.toUpperCase()}
+                                </FormLabel>
+                              </FormItem>
+                            ),
+                          )}
+                        </RadioGroup>
+                      </FormControl>
+                    </FormItem>
+                  )}
                 />
-              </div>
 
-              <div className="md:col-span-2">
-                <Button className="w-full md:w-auto">Dispatch Message</Button>
-              </div>
-            </form>
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-[10px] uppercase font-black tracking-widest text-slate-500">
+                        Message
+                      </FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Describe project scope..."
+                          {...field}
+                          className="rounded-xl min-h-[150px]"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <Button
+                  disabled={pending}
+                  type="submit"
+                  className="w-full md:w-auto "
+                >
+                  {pending ? "Dispatching..." : "Dispatch Message"}
+                  <IconSend size={18} />
+                </Button>
+              </form>
+            </Form>
           </div>
         </div>
       </div>

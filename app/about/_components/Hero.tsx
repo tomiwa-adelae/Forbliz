@@ -46,7 +46,7 @@ export const Hero = () => {
           </p>
 
           {/* Core Values Quick-Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-white/10">
+          <div className="hidden grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-white/10">
             {[
               {
                 icon: <IconHistory />,

@@ -32,7 +32,7 @@ export const MiningDetailSection = () => {
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               {/* Floating Stat Badge */}
-              <div className="absolute bottom-8 right-8 bg-amber-500 p-6 rounded-2xl shadow-xl text-slate-950">
+              <div className="absolute hidden bottom-8 right-8 bg-amber-500 p-6 rounded-2xl shadow-xl text-slate-950">
                 <p className="text-4xl font-black leading-none">1.2M</p>
                 <p className="text-[10px] font-bold uppercase tracking-widest">
                   Tons Extracted Annually

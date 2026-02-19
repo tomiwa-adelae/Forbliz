@@ -39,7 +39,7 @@ export const LogisticsDetailSection = () => {
                   </div>
                   <div>
                     <p className="text-white font-black italic uppercase text-lg leading-none">
-                      AIRMOB Synergy
+                      Logistics Synergy
                     </p>
                     <p className="text-emerald-400 text-[10px] font-bold uppercase tracking-widest mt-1">
                       Guaranteed Fuel & Lube Supply Chain
