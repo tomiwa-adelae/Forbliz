@@ -9,6 +9,7 @@ import {
   IconCategory,
 } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
+import { ComingSoon } from "@/components/ComingSoon";
 
 const projects = [
   {
@@ -59,7 +60,8 @@ export const ProjectsPortfolio = () => {
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
-            <div key={i} className="group cursor-pointer">
+            <div key={i} className="group cursor-pointer relative">
+              <ComingSoon />
               {/* Image Container */}
               <div className="relative h-[450px] w-full rounded-[2.5rem] overflow-hidden mb-4 shadow-2xl bg-slate-200">
                 <Image
@@ -112,7 +114,7 @@ export const ProjectsPortfolio = () => {
         </div>
 
         {/* Call to Partnership Box */}
-        <div className="mt-16 p-8 md:p-12 bg-white rounded-[3rem] border border-slate-200 shadow-xl flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
+        <div className="hidden mt-16 p-8 md:p-12 bg-white rounded-[3rem] border border-slate-200 shadow-xl flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
           <div className="absolute top-0 right-0 p-12 opacity-5 text-slate-900 pointer-events-none">
             <IconCategory size={200} />
           </div>

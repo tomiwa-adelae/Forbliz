@@ -22,7 +22,7 @@ const page = () => {
       <ValuesSection />
       {/* <LeadershipSection /> */}
       <FootprintSection />
-      <CertificationBar />
+      {/* <CertificationBar /> */}
     </div>
   );
 };
