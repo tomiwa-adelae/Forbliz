@@ -10,7 +10,7 @@ import {
   IconChartInfographic,
   IconQuote,
 } from "@tabler/icons-react";
-import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
