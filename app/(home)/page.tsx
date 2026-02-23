@@ -5,6 +5,7 @@ import { FleetSection } from "./_components/FleetSection";
 import { ProjectSection } from "./_components/ProjectSection";
 import { SafetySection } from "./_components/SafetySection";
 import { FinalCTA } from "./_components/FinalCTA";
+import { ParentLink } from "./_components/ParentLink";
 
 const page = () => {
   return (
@@ -15,6 +16,7 @@ const page = () => {
       <ProjectSection />
       <SafetySection />
       <FinalCTA />
+      <ParentLink />
     </div>
   );
 };

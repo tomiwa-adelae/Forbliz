@@ -44,7 +44,7 @@ export const FinalCTA = () => {
               </Link>
             </Button>
 
-            <Button asChild variant="outline" className="w-full sm:w-auto">
+            {/* <Button asChild variant="outline" className="w-full sm:w-auto">
               <a
                 href="/assets/forbliz-profile.pdf"
                 download
@@ -52,7 +52,7 @@ export const FinalCTA = () => {
               >
                 Download Corporate Profile <IconFileDownload size={22} />
               </a>
-            </Button>
+            </Button> */}
           </div>
 
           <div className="pt-16 flex flex-wrap justify-center items-center gap-8 opacity-40 grayscale group hover:grayscale-0 transition-all">

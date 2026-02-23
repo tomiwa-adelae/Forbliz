@@ -19,9 +19,9 @@ const footerLinks = [
     title: "Company",
     links: [
       { label: "About Forbliz", href: "/about" },
-      { label: "Our Fleet", href: "/machinery" },
-      { label: "Safety Policy", href: "/safety" },
-      { label: "Careers", href: "/careers" },
+      { label: "Our Fleet", href: "/fleets" },
+      // { label: "Safety Policy", href: "/safety" },
+      // { label: "Careers", href: "/careers" },
     ],
   },
   {
@@ -75,7 +75,7 @@ export const Footer = () => {
                   <li key={j}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
+                      className="text-gray-400 hover:text-white hover:underline transition-colors text-sm font-medium"
                     >
                       {link.label}
                     </Link>
@@ -95,11 +95,11 @@ export const Footer = () => {
                 <IconMapPin size={20} className="text-amber-500 shrink-0" />
                 <span>{ADDRESS}</span>
               </li>
-              <li className="flex gap-3 text-sm text-gray-400">
+              <li className="flex gap-3 text-sm text-gray-400 hover:text-white hover:underline">
                 <IconPhone size={20} className="text-amber-500 shrink-0" />
                 <a href={`tel:${PHONE}`}>{PHONE}</a>
               </li>
-              <li className="flex gap-3 text-sm text-gray-400">
+              <li className="flex gap-3 text-sm text-gray-400 hover:text-white hover:underline">
                 <IconMail size={20} className="text-amber-500 shrink-0" />
                 <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
               </li>
@@ -115,7 +115,7 @@ export const Footer = () => {
           </p>
 
           <Link
-            href="https://airmob.com"
+            href="https://airmob.net.ng/"
             className="group flex items-center gap-3 px-6 py-2 bg-emerald-500/5 hover:bg-emerald-500/10 border border-emerald-500/10 rounded-full transition-all"
           >
             <span className="text-[10px] font-black uppercase tracking-widest text-emerald-500/60 group-hover:text-emerald-500">
