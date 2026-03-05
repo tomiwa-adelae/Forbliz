@@ -91,7 +91,7 @@ export function MobileNavbar() {
           </div>
         </ScrollArea>
         <SheetFooter className="mb-10">
-          <Button asChild>
+          <Button onClick={handleLinkClick} asChild>
             <Link href="/request-quote">Request Quote</Link>
           </Button>
         </SheetFooter>
